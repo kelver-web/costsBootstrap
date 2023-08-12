@@ -1,14 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 
+import api from '../../services/api'
+
 
 function ProjectForm() {
 
-    const [validated, setValidated] = useState(false);
+    const [validated, setValidated] = useState(false)
+    const [category, setCategory] = useState([])
+    
 
+    useEffect(() => {
+        const loadCategories = async () => {
+            const { data } = await api.get("categories")
+
+            setCategory(data)
+        }
+        
+        loadCategories()
+    }, [])
+
+    
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -33,7 +48,7 @@ function ProjectForm() {
                     <Form.Control.Feedback type="invalid">
                         Por favor informe o nome do projto.
                     </Form.Control.Feedback>
-                    <Form.Control.Feedback>Preenchido!</Form.Control.Feedback>
+                    <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
             </Row>
             <Row className='d-flex justify-content-center'>
@@ -47,7 +62,7 @@ function ProjectForm() {
                     <Form.Control.Feedback type="invalid">
                         Por favor informe o orçamento do projto.
                     </Form.Control.Feedback>
-                    <Form.Control.Feedback>Preenchido!</Form.Control.Feedback>
+                    <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
             </Row>
             <Row className='d-flex justify-content-center'>
@@ -55,15 +70,14 @@ function ProjectForm() {
                     <Form.Label className='text-white fw-bolder mt-4'>Selecione um categoria:</Form.Label>
                     <Form.Select className="form-select" id="validationDefault04" required>
                         <option value="">Escolha uma categoria</option>
-                        <option className="text-white" value="0">zero</option>
-                        <option className="text-white" value="1">One</option>
-                        <option className="text-white" value="2">Two</option>
-                        <option className="text-white" value="3">Three</option>
+                        {category.map(cat => (
+                            <option key={cat.id} className='text-white'>{cat.name}</option>
+                        ))}
                     </Form.Select>
                     <Form.Control.Feedback type="invalid">
                         Por favor selecione uma categoria.
                     </Form.Control.Feedback>
-                    <Form.Control.Feedback>Preenchido!</Form.Control.Feedback>
+                    <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                 </Form.Group>
             </Row>
             <Row className='d-flex justify-content-center mt-4'>
