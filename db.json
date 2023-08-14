@@ -1,22 +1,44 @@
 {
-    "projects": [],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Desenvolvimento"
-        },
-        {
-            "id": 2,
-            "name": "Planejamento"
-        },
-        {
-            "id": 3,
-            "name": "Dsign"
-        },
-        {
-            "id": 4,
-            "name": "Infra"
-        }
-    ]
+  "projects": [
+    {
+      "name": "Pizzaria",
+      "budget": 15000,
+      "category": {
+        "id": "1",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 1
+    },
+    {
+      "name": "Barbearia",
+      "budget": 50000,
+      "category": {
+        "id": "2",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 2,
+      "name": "Planejamento"
+    },
+    {
+      "id": 3,
+      "name": "Dsign"
+    },
+    {
+      "id": 4,
+      "name": "Infra"
+    }
+  ]
 }
-

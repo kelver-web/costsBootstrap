@@ -1,13 +1,22 @@
+import PropTypes from 'prop-types'
+
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button';
 
 
-function LinkButton() {
+function LinkButton({href, text}) {
     return (
-        <Nav.Link href='/newproject' className='mt-2'>
-            <Button variant="outline-warning">Criar Projeto</Button>
-        </Nav.Link>
+        <>
+            <Nav.Link href={href} className='mt-2'>
+                <Button variant="outline-warning">{text}</Button>
+            </Nav.Link>
+        </>
     )
+}
+
+LinkButton.propTypes = {
+    href: PropTypes.node,
+    text: PropTypes.string,
 }
 
 export default LinkButton

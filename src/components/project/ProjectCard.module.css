@@ -1,0 +1,30 @@
+
+.category_text {
+    display: flex;
+    align-items: center;
+}
+
+.category_text span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e6abab;
+    margin-right: 5px;
+}
+
+.category_text .infra {
+    background-color: #fc4e6b;
+}
+
+.category_text .desenvolvimento {
+    background-color: #2bfcf5;
+}
+
+.category_text .design {
+    background-color: #15ff5b;
+}
+
+.category_text .planejamento {
+    background-color: #ffa410;
+}

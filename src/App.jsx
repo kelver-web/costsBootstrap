@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-
 import Container from 'react-bootstrap/Container'
 
 import Home from './components/pages/Home'
 import Projects from './components/pages/Projects'
+import Project from './components/pages/Project'
 import Company from './components/pages/Company'
 import NewProject from './components/pages/NewProject'
 import Contact from './components/pages/Contact'
@@ -25,6 +25,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/company' element={<Company />} />
+            <Route path='/project' element={<Project/>} />
             <Route path='/newproject' element={<NewProject />} />
             <Route path='/contact' element={<Contact />} />
           </Routes>
