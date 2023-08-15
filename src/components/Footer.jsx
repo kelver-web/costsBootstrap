@@ -1,22 +1,27 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'
+
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 
 function Footer() {
   return (
     <>
-      <Navbar className='border-top border-warning d-flex flex-column align-items-center justfy-content-center'>
-        <Container className='d-flex justify-content-center align-items-center fs-4 gap-3 text-warning mt-3'>
-            <Nav.Link href="/"><FaFacebook/></Nav.Link>
-            <Nav.Link href="/projects"><FaInstagram/></Nav.Link>
-            <Nav.Link href="/company"><FaLinkedin/></Nav.Link>
-        </Container>
-        <Container className='d-flex justify-content-center align-items-center gap-2 pb-3'>
-          <strong className='text-warning'>Costs</strong> <span className='text-white'>&copy; 2023</span>
-        </Container>
-      </Navbar>
+      <footer className="text-center text-warning border-top border-warning mt-5">
+        <div className="container p-4">
+          <section className="mb-1">
+            <a className="btn btn-outline-warning btn-floating m-1" href="#!" role="button"><FaFacebook className='icons'/></a>
+            <a className="btn btn-outline-warning btn-floating m-1" href="#!" role="button"><FaInstagram className='icons'/></a>
+            <a className="btn btn-outline-warning btn-floating m-1" href="#!" role="button"><FaLinkedin className='icons'/></a>
+          </section>
+        </div>
+        <div className="text-center p-1" >
+          © 2023 Copyright:
+          <a className="text-white" 
+            rel="noopener noreferrer"
+            target="_blank" 
+            href="https://mdbootstrap.com/" 
+            style={{ textDecoration: 'none'}}> MDBootstrap.com</a>
+        </div>
+      </footer>
     </>
   )
 }

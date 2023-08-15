@@ -18,7 +18,7 @@ function ProjectCard({ id, name, budget, category, handleRemove }) {
     return (
         <Row className="px-4">
             <Col className="mb-4" style={{ width: '18em' }}>
-                <Card className="card border border-warning border-5">
+                <Card className="card border border-warning border-3">
                     <Card.Body className="card-body">
                         <h4 className="card-title text-white fw-bolder">{name}</h4>
                         <p className="card-text text-white">
