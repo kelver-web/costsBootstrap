@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import api from '../../services/api'
 import { toast } from 'react-toastify';
+import Container from "react-bootstrap/esm/Container";
 
 
 function NewProject() {
@@ -31,15 +32,17 @@ function NewProject() {
 
 
   return (
-    <>
-      <Row className='d-flex justify-content-center'>
+    <Container className="px-4 mt-5">
+      <Row className='d-flex px-5'>
         <Form.Group as={Col} md="4">
-          <h1 className="text-white fw-bolder ml-5">Criar Projeto</h1>
-          <p className="text-white">Crie os seus projetos para depois adicionar os serviços</p>
+          <h1 className="text-warning fw-bolder ml-5 ">Criar Projeto</h1>
+          <p className="text-white mb-4">Crie os seus projetos para depois <br /> adicionar os serviços</p>
         </Form.Group>
       </Row>
-      <ProjectForm handleSubmitProject={createPost}/>
-    </>
+      <Container className="px-5">
+        <ProjectForm handleSubmitProject={createPost} btnText="Criar Projeto"/>
+      </Container>
+    </Container>
   )
 }
 

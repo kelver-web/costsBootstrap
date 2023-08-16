@@ -48,7 +48,7 @@ function Projects() {
 
 
   return (
-    <Container>
+    <Container className='px-4'>
       <Container className="d-flex justify-content-sm-between align-items-sm-center my-5 px-4">
         <Container className="d-flex justify-content-sm-between align-items-sm-center">
           <h1 className='d-flex text-warning fw-bolder'>Meus Projetos</h1>

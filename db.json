@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Pizzaria",
-      "budget": 15000,
+      "budget": 100000,
       "category": {
         "id": "1",
         "name": "Desenvolvimento"
@@ -13,25 +13,27 @@
     },
     {
       "name": "Barbearia",
-      "budget": 50000,
+      "budget": 150000,
       "category": {
-        "id": "2",
-        "name": "Planejamento"
+        "id": "1",
+        "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1123,
+      "services": [
+        {
+          "name": "Desenvolvimento do Projeto",
+          "cost": 123,
+          "description": "Contratar um dev Python",
+          "id": "02107ce8-0acd-46b4-bbcf-4a061ad06baa"
+        },
+        {
+          "name": "Desenvolver o Dsing do Projeto",
+          "cost": 1000,
+          "description": "Contratar um Dsigner para criação do layout do projeto",
+          "id": "2ef35fb1-47f4-4a61-adce-f31294a98e49"
+        }
+      ],
       "id": 2
-    },
-    {
-      "name": "Padaria",
-      "budget": 15000,
-      "category": {
-        "id": "4",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
     }
   ],
   "categories": [

@@ -8,6 +8,8 @@ import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
 import Button from 'react-bootstrap/esm/Button'
 import styles from './ProjectCard.module.css'
 
+import formatCurrency from '../../utils/formatCurrency'
+
 
 function ProjectCard({ id, name, budget, category, handleRemove }) {
 
@@ -22,7 +24,7 @@ function ProjectCard({ id, name, budget, category, handleRemove }) {
                     <Card.Body className="card-body">
                         <h4 className="card-title text-white fw-bolder">{name}</h4>
                         <p className="card-text text-white">
-                            <span>Orçamento:</span> R${budget}
+                            <span>Orçamento:</span> <span className='fw-bolder'>{formatCurrency(budget)}</span>
                         </p>
                         <p className={`${styles.category_text} text-white`}>
                             <span className={`${styles[category.toLowerCase()]}`}></span> {category}

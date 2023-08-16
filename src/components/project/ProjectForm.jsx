@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
 
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button'
+import SubmitButton from '../form/SubmitButton';
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 
@@ -11,7 +11,8 @@ import { toast } from 'react-toastify';
 
 
 
-function ProjectForm({ handleSubmitProject, projectData }) {
+// eslint-disable-next-line react/prop-types
+function ProjectForm({ handleSubmitProject, btnText, projectData }) {
 
     const [project, setProject] = useState(projectData || {})
     const [category, setCategory] = useState([])
@@ -70,7 +71,7 @@ function ProjectForm({ handleSubmitProject, projectData }) {
         <>
             <Form noValidate validated={validated} onSubmit={handleSubmit} className='mb-5'>
                 <Row className='d-flex justify-content-center'>
-                    <Form.Group as={Col} md="4" controlId="validationCustom01">
+                    <Form.Group as={Col} md="12" controlId="validationCustom01">
                         <Form.Label className='text-white fw-bolder'>Nome do projeto:</Form.Label>
                         <Form.Control
                             name='name'
@@ -78,7 +79,7 @@ function ProjectForm({ handleSubmitProject, projectData }) {
                             required
                             type="text"
                             placeholder="Nome do projeto"
-
+                            value={project.name ? project.name : ''}
                         />
                         <Form.Control.Feedback type="invalid">
                             Por favor informe o nome do projeto.
@@ -87,7 +88,7 @@ function ProjectForm({ handleSubmitProject, projectData }) {
                     </Form.Group>
                 </Row>
                 <Row className='d-flex justify-content-center'>
-                    <Form.Group as={Col} md="4" controlId="validationCustom02">
+                    <Form.Group as={Col} md="12" controlId="validationCustom02">
                         <Form.Label className='text-white fw-bolder mt-4'>Orçamento do projeto:</Form.Label>
                         <Form.Control
                             name='budget'
@@ -95,7 +96,7 @@ function ProjectForm({ handleSubmitProject, projectData }) {
                             required
                             type="number"
                             placeholder="Orçamento do projeto"
-
+                            value={project.budget ? project.budget : ''}
                         />
                         <Form.Control.Feedback type="invalid">
                             Por favor informe o orçamento do projeto.
@@ -104,12 +105,13 @@ function ProjectForm({ handleSubmitProject, projectData }) {
                     </Form.Group>
                 </Row>
                 <Row className='d-flex justify-content-center'>
-                    <Form.Group as={Col} md="4" controlId="validationDefault04" required>
+                    <Form.Group as={Col} md="12" controlId="validationDefault04" required>
                         <Form.Label className='text-white fw-bolder mt-4'>Selecione um categoria:</Form.Label>
                         <Form.Select className="form-select" id="validationDefault04"
                             name='category'
                             onChange={handleChangeCategoy}
                             required
+                            value={project.category ? project.category.id : ''}
                         >
                             <option value="" className='text-secondary'>Escolha uma categoria</option>
                             {category.map(cat => (
@@ -122,9 +124,9 @@ function ProjectForm({ handleSubmitProject, projectData }) {
                         <Form.Control.Feedback>Ok!</Form.Control.Feedback>
                     </Form.Group>
                 </Row>
-                <Row className='d-flex justify-content-center mt-4'>
+                <Row className=' mt-4'>
                     <Form.Group as={Col} md="4" controlId="validationCustom03">
-                        <Button type="submit" variant="outline-warning">Criar Projeto</Button>
+                        <SubmitButton text={btnText}></SubmitButton>
                     </Form.Group>
                 </Row>
             </Form>
@@ -133,8 +135,7 @@ function ProjectForm({ handleSubmitProject, projectData }) {
 }
 
 ProjectForm.propTypes = {
-    handleSubmitProject: PropTypes.func,
-    projectData: PropTypes.string
+    handleSubmitProject: PropTypes.func
 }
 
 export default ProjectForm

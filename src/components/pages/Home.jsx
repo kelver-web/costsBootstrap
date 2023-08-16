@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/Badge';
 function Home() {
   return (
     <>
-      <section className='d-flex flex-column justify-content-center align-items-center'>
+      <section className='d-flex flex-column justify-content-center align-items-center pt-5'>
         <div>
           <h1 className='text-white'>Bem vindo ao <Badge className='bg-warning'>Costs</Badge></h1>
           <p className='text-white'>Começe a gerenciar os seus projetos agora mesmo!</p>
